@@ -71,12 +71,14 @@ def move(arrow):
         for i in range(math):
             for j in range(matw - 1):
                 matrix[i][j].state = matrix[i][j + 1].state
-        matrix[i][-1].state = 0
+        for i in matrix:
+            i[-1].state = 0
     if arrow == "left":
         for i in range(math):
             for j in range(matw - 1, 0, -1):
                 matrix[i][j].state = matrix[i][j - 1].state
-        matrix[i][0].state = 0
+        for i in matrix:
+            i[0].state = 0
     if arrow == "down":
         for i in range(math - 1):
             for j in range(matw):
@@ -171,4 +173,3 @@ while running:
     draw_text()
     pygame.display.flip()
     pygame.time.wait(100)
-
